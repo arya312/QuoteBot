@@ -1,0 +1,70 @@
+version: "2.0"
+
+stories:
+
+- story: random quote happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: asks_for_quote
+  - action: utter_tell_random_quote
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - action: utter_goodbye
+
+- story: quote by author happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: quote_author
+  - action: utter_author_quote
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - action: utter_goodbye
+
+- story: quote with topics happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: quote_topic
+  - action: utter_quote_topic
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - action: utter_goodbye
+
+- story: random quote sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: asks_for_quote
+  - action: utter_tell_random_quote
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_did_not_understand
+
+- story: quote by author sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: quote_author
+  - action: utter_author_quote
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_did_not_understand
+
+- story: quote with topics sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: quote_topic
+  - action: utter_quote_topic
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_did_not_understand
+
+
+
+

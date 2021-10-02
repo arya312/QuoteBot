@@ -1,0 +1,72 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - asks_for_quote
+  - quote_topic
+  - quote_author
+
+
+entities:
+  - topic
+  - author
+
+slots:
+  topic:
+    type: text
+  author:
+    type: text
+
+
+actions:
+  - utter_greet
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - utter_did_not_understand
+  - utter_tell_random_quote
+  - utter_author_quote
+  - utter_quote_topic
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_did_not_understand:
+  - text: "Sorry, I can't understand you. Try again."
+
+  utter_tell_random_quote: 
+  - text: "“You are the shuckiest shuck faced shuck in the world!”"
+  utter_author_quote:
+  - text: "“There is nothing in the world so irresistibly contagious as laughter and good humor.”"
+  utter_quote_topic:
+  - text: "“Love all, trust a few, do wrong to none.”"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
